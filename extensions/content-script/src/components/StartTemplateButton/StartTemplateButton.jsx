@@ -3,8 +3,35 @@ import React from 'react';
 import { AiGoormeeIcon, ForwardPageIcon } from '@goorm-dev/gds-icons';
 import { Button } from '@goorm-dev/gds-components';
 import style from './StartTemplateButton.module.scss';
+import axios from 'axios';
 
 const StartTemplateButton = () => {
+  const url = 'http://localhost:8080/api/newRoom';
+  const joinRoom = async () => {
+    const payload = {
+      containerUid: '44444test-containeruid',
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={style.StartTemplateButton}>
       <header className={style.StartTemplateButton__header}>
@@ -24,6 +51,7 @@ const StartTemplateButton = () => {
           color="primary"
           size="xl"
           className={style.StartTemplateButton__button}
+          onClick={joinRoom}
         >
           템플릿으로 질문하기
         </Button>
