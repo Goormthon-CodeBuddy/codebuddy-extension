@@ -24,8 +24,8 @@ const Header = () => {
       />
       <div className={style.Header__dropdown}>
         <UncontrolledDropdown direction="left">
-          <DropdownToggle tag="span">
-            <MoreCommonIcon />
+          <DropdownToggle tag="span" className={style.Header__}>
+            <MoreCommonIcon width="24" height="24" />
           </DropdownToggle>
           <DropdownMenu left>
             <DropdownItem>
@@ -51,7 +51,7 @@ const Header = () => {
             <DropdownItem>
               <Button
                 color="select"
-                icon={<PlusIcon />}
+                icon={<PlusIcon width="30" height="30" />}
                 iconSide="right"
                 tag="button"
               >
