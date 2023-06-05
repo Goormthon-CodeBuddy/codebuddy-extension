@@ -7,9 +7,12 @@ import './App.css';
 import { Button } from 'react-bootstrap';
 
 function App() {
-  const onClickHandler = () => {
-    chrome.runtime.sendMessage({ time: '1' }, function (response) {
-      console.log(response);
+  const handleNotification = () => {
+    chrome.notifications.create({
+      type: 'basic',
+      title: 'Code Buddy',
+      message: 'You have an alert in 15 minutes',
+      iconUrl: 'favicon.ico',
     });
   };
 
@@ -19,7 +22,7 @@ function App() {
         <Logo className="App-logo" id="App-logo" title="React logo" />
         <p>Hello</p>
         <p>I'm a Chrome Extension Content</p>
-        <Button variant="primary" onClick={onClickHandler}>
+        <Button variant="primary" onClick={handleNotification}>
           Primary
         </Button>
       </header>
