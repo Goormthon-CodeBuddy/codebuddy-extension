@@ -4,20 +4,17 @@ import React from 'react';
 import Logo from './Logo';
 import './App.css';
 import Header from './components/Header';
+import StartTemplateButton from './components/StartTemplateButton';
 import './goormstrap.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainPage from './components/MainPage/MainPage';
-import TemplatePage from './components/TemplatePage';
+import SearchInput from './components/SearchInput';
 function App() {
   return (
     <div className="App">
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/templatePage" element={<TemplatePage />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="startTemplateButtonContainer">
+        <StartTemplateButton />
+      </div>
+      <SearchInput />
     </div>
   );
 }

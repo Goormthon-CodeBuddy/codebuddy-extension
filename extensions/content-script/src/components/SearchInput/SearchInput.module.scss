@@ -1,0 +1,19 @@
+.SearchInput {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__input {
+    width: 400px;
+    padding-right: 90px;
+    resize: none;
+  }
+  &__button {
+    position: absolute;
+    right: 30px;
+  }
+}
