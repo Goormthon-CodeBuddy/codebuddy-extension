@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 
-import "./main.scss";
+import "./main.css";
 import App from "./App";
 
 const router = createMemoryRouter([
