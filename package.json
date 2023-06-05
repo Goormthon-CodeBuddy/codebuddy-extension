@@ -15,6 +15,10 @@
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "2.0.0-beta.17",
+		"@goorm-dev/gds-components": "1.10.1-alpha.1",
+		"@goorm-dev/gds-icons": "1.9.0",
+		"@goorm-dev/gds-tables": "1.2.0",
+		"@goorm-dev/gds-toastify": "1.8.0",
     "@types/chrome": "0.0.237",
     "@types/node": "18.8.3",
     "@types/react": "18.0.17",
