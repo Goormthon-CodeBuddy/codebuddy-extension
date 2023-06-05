@@ -8,35 +8,6 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../../App';
 
 const StartTemplateButton = () => {
-  const { setRoomIndex } = useContext(AppContext);
-
-  const url = 'http://localhost:8080/api/newRoom';
-  const joinRoom = async () => {
-    const payload = {
-      containerUid: '44444test-containeruid',
-    };
-
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        throw new Error('Request failed');
-      }
-
-      const data = await response.json();
-      console.log(data.data.index);
-      setRoomIndex(data.data.index);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <Link className={style.StartTemplateButton} to="/templatePage">
       <header className={style.StartTemplateButton__header}>
