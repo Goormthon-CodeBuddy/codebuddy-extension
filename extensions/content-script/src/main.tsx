@@ -47,8 +47,8 @@ const AppProvider = ({ children }) => {
 
   const [prompt, setPrompt] = useState('');
   const [description, setDescription] = useState('');
-  const [stack, setStack] = useState('');
-  const [type, setType] = useState('');
+  const [stack, setStack] = useState('cpp');
+  const [type, setType] = useState('에러 해결');
 
   return (
     <AppContext.Provider
