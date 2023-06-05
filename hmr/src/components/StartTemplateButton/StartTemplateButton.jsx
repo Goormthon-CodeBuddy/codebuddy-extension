@@ -3,10 +3,11 @@ import React from 'react';
 import { AiGoormeeIcon, ForwardPageIcon } from '@goorm-dev/gds-icons';
 import { Button } from '@goorm-dev/gds-components';
 import style from './StartTemplateButton.module.scss';
+import { Link } from 'react-router-dom';
 
 const StartTemplateButton = () => {
   return (
-    <div className={style.StartTemplateButton}>
+    <Link className={style.StartTemplateButton} to="/templatePage">
       <header className={style.StartTemplateButton__header}>
         <div className={style.StartTemplateButton__logo}>
           <AiGoormeeIcon width="40" height="40" />
@@ -28,7 +29,7 @@ const StartTemplateButton = () => {
           템플릿으로 질문하기
         </Button>
       </main>
-    </div>
+    </Link>
   );
 };
 
