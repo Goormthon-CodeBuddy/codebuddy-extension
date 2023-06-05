@@ -1,7 +1,12 @@
-.App {
-  text-align: center;
-}
-
 .wrapper {
-  color: var(--white);
+    width: 500px;
+    height: calc(100vh - 48px);
+    margin: 24px 24px 24px 0px;
+    padding: 16px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: var(--white);
 }
