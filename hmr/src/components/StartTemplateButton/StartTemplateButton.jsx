@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { AiGoormeeIcon, ForwardPageIcon } from '@goorm-dev/gds-icons';
 import { Button } from '@goorm-dev/gds-components';
 import style from './StartTemplateButton.module.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../../App';
 
 const StartTemplateButton = () => {
+  const { setRoomIndex } = useContext(AppContext);
+
   const url = 'http://localhost:8080/api/newRoom';
   const joinRoom = async () => {
     const payload = {
@@ -27,7 +30,8 @@ const StartTemplateButton = () => {
       }
 
       const data = await response.json();
-      console.log(data);
+      console.log(data.data.index);
+      setRoomIndex(data.data.index);
     } catch (error) {
       console.log(error);
     }
