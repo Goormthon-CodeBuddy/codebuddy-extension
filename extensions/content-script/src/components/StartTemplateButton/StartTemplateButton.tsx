@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { AiGoormeeIcon, ForwardPageIcon } from '@goorm-dev/gds-icons';
 import { Button } from '@goorm-dev/gds-components';
@@ -16,11 +16,16 @@ const StartTemplateButton = () => {
   const createRoom = async () => {
     const uid = window.location.pathname.replace('/workspace/', '');
     const newRoomIndex = await joinRoom(uid);
-    if (newRoomIndex) updateRoomIndex(newRoomIndex);
-  }
+    if (newRoomIndex) {
+      updateRoomIndex(newRoomIndex);
+      navigate('/templatePage');
+    }
+  };
+
+  const navigate = useNavigate();
 
   return (
-    <Link className={style.StartTemplateButton} to="/templatePage">
+    <div className={style.StartTemplateButton}>
       <header className={style.StartTemplateButton__header}>
         <div className={style.StartTemplateButton__logo}>
           <AiGoormeeIcon width="40" height="40" />
@@ -43,7 +48,7 @@ const StartTemplateButton = () => {
           템플릿으로 질문하기
         </Button>
       </main>
-    </Link>
+    </div>
   );
 };
 

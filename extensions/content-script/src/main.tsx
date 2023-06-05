@@ -1,9 +1,10 @@
-import React, { createContext, useEffect, useState } from "react";
-import { createRoot } from "react-dom/client";
+import React, { createContext, useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 
-import "./main.css";
-import Landing from "./pages/Landing/Landing";
+import './main.css';
+import Landing from './pages/Landing/Landing';
+import TemplatePage from './pages/TemplatePage/TemplatePage';
 
 const router = createMemoryRouter([
   {
@@ -11,20 +12,20 @@ const router = createMemoryRouter([
     element: <Landing />,
   },
   {
-    path: '/test',
-    element: <div>test</div>,
+    path: '/templatePage',
+    element: <TemplatePage />,
   },
 ]);
 
-const body = document.querySelector("body");
-const app = document.createElement("div");
-app.id = "root";
+const body = document.querySelector('body');
+const app = document.createElement('div');
+app.id = 'root';
 
 if (body) {
   body.append(app);
 }
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = createRoot(container!);
 
 export const AppContext = createContext({
@@ -43,11 +44,10 @@ const AppProvider = ({ children }) => {
   );
 };
 
-
 root.render(
   <React.StrictMode>
     <AppProvider>
       <RouterProvider router={router} />
     </AppProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

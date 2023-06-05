@@ -21,10 +21,6 @@ function Landing() {
   //   });
   // };
 
-  const handleNotification = () => {
-    chrome.runtime.sendMessage({ action: 'createNotification' });
-  };
-
   const { roomIndex } = useContext(AppContext);
   console.log(roomIndex);
 
