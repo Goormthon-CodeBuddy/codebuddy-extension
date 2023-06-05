@@ -3,14 +3,14 @@
 
 import React from 'react';
 
-import './App.css';
-import './goormstrap.css';
+import './Landing.css';
+import '../../goormstrap.css';
 
-import Header from './components/Header';
-import StartTemplateButton from './components/StartTemplateButton';
-import SearchInput from './components/SearchInput';
+import Header from '../../components/Header';
+import StartTemplateButton from '../../components/StartTemplateButton';
+import SearchInput from '../../components/SearchInput';
 
-function App() {
+function Landing() {
   // const handleNotification = () => {
   //   chrome.notifications.create({
   //     type: 'basic',
@@ -35,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default Landing;

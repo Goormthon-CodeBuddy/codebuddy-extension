@@ -4,7 +4,7 @@
 import React from 'react';
 import Logo from './Logo';
 import './App.css';
-import { Button } from 'react-bootstrap';
+import { Button } from '@goorm-dev/gds-components';
 
 function App() {
   const handleNotification = () => {
