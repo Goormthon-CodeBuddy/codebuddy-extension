@@ -1,10 +1,18 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
+
 import "./main.scss";
 import App from "./App";
 
-const body = document.querySelector("body");
+const router = createMemoryRouter([
+  {
+    path: '/',
+    element: <App />,
+  },
+]);
 
+const body = document.querySelector("body");
 const app = document.createElement("div");
 
 app.id = "root";
@@ -18,6 +26,6 @@ const root = createRoot(container!);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
