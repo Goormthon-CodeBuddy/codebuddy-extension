@@ -1,10 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "React Content Script",
+  "name": "CodeBuddy Extensions",
   "version": "1.0.0",
+  "permissions": ["alarms", "notifications"],
   "action": {
     "default_title": "Popup",
-    "default_popup": "index.html"
+    "default_popup": "extensions/popup/index.html"
+  },
+  "background": {
+    "service_worker": "extensions/background/background.ts",
+    "type": "module"
   },
   "icons": {},
   "content_scripts": [

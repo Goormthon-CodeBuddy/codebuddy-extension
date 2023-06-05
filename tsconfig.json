@@ -14,8 +14,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
-  "include": ["extensions/**/*.ts"],
+  "include": ["global.d.ts", "extensions/**/*.ts", "extensions/background/background.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
