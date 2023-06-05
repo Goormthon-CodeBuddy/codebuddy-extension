@@ -25,7 +25,7 @@ function Landing() {
   console.log(roomIndex);
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <Header />
       <div className="startTemplateButtonContainer">
         <StartTemplateButton />

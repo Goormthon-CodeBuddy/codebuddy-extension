@@ -1,0 +1,39 @@
+.QuestionType {
+  width: 400px;
+  position: relative;
+  margin-top: 60px;
+
+  &__label {
+    font-weight: 900;
+    color: black;
+    position: absolute;
+    left: 0;
+    top: -20px;
+  }
+  &__option {
+    color: var(--gray-300);
+  }
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  &__menu {
+    overflow-y: auto;
+    width: 100%;
+    max-height: 15rem;
+  }
+
+  &__item {
+    width: 100%;
+
+    &__icon {
+      width: 1.1844rem;
+      height: 1.375rem;
+      margin-right: 0.5rem;
+    }
+  }
+}

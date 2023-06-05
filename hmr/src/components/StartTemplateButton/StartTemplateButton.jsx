@@ -6,6 +6,7 @@ import style from './StartTemplateButton.module.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../App';
+import joinRoom from '../../../../apis/requestNewRoom';
 
 const StartTemplateButton = () => {
   return (
