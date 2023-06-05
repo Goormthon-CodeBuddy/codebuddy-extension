@@ -20,4 +20,15 @@ chrome.action.onClicked.addListener(function (tab) {
   chrome.tabs.create({ url: 'https://www.naver.com/' });
 });
 
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === 'createNotification') {
+    chrome.notifications.create({
+      type: 'basic',
+      title: 'Code Buddy',
+      message: 'You have an alert in 15 minutes',
+      iconUrl: 'favicon.ico',
+    });
+  }
+});
+
 export {};
