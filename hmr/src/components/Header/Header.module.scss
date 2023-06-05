@@ -1,0 +1,19 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40px;
+
+  &__logo {
+    width: 120px;
+    height: 90px;
+  }
+  & button {
+    width: 100%;
+    border: none;
+    background: transparent;
+    & > div {
+      justify-content: space-between;
+    }
+  }
+}
