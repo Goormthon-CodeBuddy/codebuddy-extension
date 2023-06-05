@@ -7,8 +7,9 @@
  
    "content_scripts": [
        {
-           "matches": ["https://ide.dev.goorm.io/workspace/*", "<all_urls>"],
-           "js": ["dist/contentScript.js"]
+            "all_frames": true,
+            "matches": ["https://ide.dev.goorm.io/workspace/*"],
+            "js": ["dist/contentScript.js"]
        }
    ],
 
@@ -23,7 +24,7 @@
    "permissions": [
       "storage", "activeTab", "scripting", "tabs"
    ],
- 
+
    "host_permissions": [
      "<all_urls>"
    ]
