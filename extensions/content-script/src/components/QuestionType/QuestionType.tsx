@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import {
   UncontrolledDropdown,
   DropdownToggle,
@@ -8,12 +8,21 @@ import {
 } from '@goorm-dev/gds-components';
 import { ChevronDownIcon, HelpCircleIcon } from '@goorm-dev/gds-icons';
 import style from './QuestionType.module.scss';
+import { AppContext } from '../../main';
+
 const QuestionType = () => {
+  const { setType } = useContext(AppContext);
   const questionTypes = [
     '에러 해결',
     '코드 분석(설명)',
     '코드 개선(refactoring)',
   ];
+
+  const [selected, setSelected] = useState('에러 해결');
+  const handleClick = (id) => {
+    setSelected(id);
+    setType(id);
+  };
   return (
     <div className={style.QuestionType}>
       <label className={style.QuestionType__label}>
@@ -30,7 +39,7 @@ const QuestionType = () => {
           color="select"
           block
         >
-          <div>{questionTypes[0]}</div>
+          <div>{selected}</div>
           <ChevronDownIcon />
         </DropdownToggle>
         <DropdownMenu className={style.QuestionType__menu}>
@@ -39,6 +48,7 @@ const QuestionType = () => {
               <DropdownItem
                 className={style.QuestionType__item}
                 key={questiontype}
+                onClick={() => handleClick(questiontype)}
               >
                 <div>{questiontype}</div>
               </DropdownItem>
