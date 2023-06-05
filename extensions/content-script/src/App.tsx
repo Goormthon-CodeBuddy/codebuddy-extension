@@ -2,7 +2,9 @@
 /// <reference types="vite-plugin-svgr/client" />
 
 import React from 'react';
-import Logo from './Logo';
+import cn from 'classnames';
+
+import CodeMirrorEditor from './components/CodeMirrorEditor';
 import './App.css';
 import { Button } from 'react-bootstrap';
 
@@ -17,9 +19,11 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={cn('wrapper', 'd-flex flex-column justify-content-center')}>
       <header className="App-header">
-        <Logo className="App-logo" id="App-logo" title="React logo" />
+        <CodeMirrorEditor code={'console.log("test")'} />
+        <p>Hello, World!</p>
+        <p>I'm a Chrome Extension Content Script!</p>
         <p>Hello</p>
         <p>I'm a Chrome Extension Content</p>
         <Button variant="primary" onClick={handleNotification}>
