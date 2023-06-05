@@ -26,7 +26,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       type: 'basic',
       title: 'Code Buddy',
       message: 'ChatGPT 답변이 완료되었습니다.',
-      iconUrl: 'favicon.ico',
+      iconUrl: 'goorm.png',
     });
   }
 });
