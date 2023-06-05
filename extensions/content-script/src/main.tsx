@@ -9,7 +9,7 @@ import TemplatePage from './pages/TemplatePage/TemplatePage';
 const router = createMemoryRouter([
   {
     path: '/',
-    element: <TemplatePage />,
+    element: <Landing />,
   },
   {
     path: '/templatePage',

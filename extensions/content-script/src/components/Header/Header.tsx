@@ -48,7 +48,7 @@ const Header = () => {
                 icon={<HistoryIcon />}
                 iconSide="right"
                 tag="button"
-                onClick={() => navigate('/test')}
+                onClick={() => navigate('/templatePage')}
               >
                 History
               </Button>

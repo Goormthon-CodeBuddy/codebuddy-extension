@@ -65,7 +65,7 @@ const SoftwareStackDropdown = () => {
     <div className={style.SoftwareStackDropdown}>
       <label className={style.SoftwareStackDropdown__label}>
         Stack
-        <span className={style.SoftwareStackDropdown__option}>(Optional)</span>
+        <span className={style.SoftwareStackDropdown__option}> (Optional)</span>
         <HelpCircleIcon id="stackHelp" />
         <UncontrolledTooltip target="stackHelp" placement="top">
           현재 사용중인 소프트웨어 스택을 선택해 주세요
