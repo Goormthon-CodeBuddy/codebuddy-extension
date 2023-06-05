@@ -1,0 +1,13 @@
+.Chat {
+  color: black;
+
+  &__info {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+  }
+  &__main {
+    margin-left: 40px;
+  }
+}

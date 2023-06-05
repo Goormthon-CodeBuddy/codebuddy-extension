@@ -5,15 +5,20 @@ import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import './main.css';
 import Landing from './pages/Landing/Landing';
 import TemplatePage from './pages/TemplatePage/TemplatePage';
+import Chatting from './pages/Chatting/Chatting';
 
 const router = createMemoryRouter([
   {
     path: '/',
-    element: <TemplatePage />,
+    element: <Landing />,
   },
   {
     path: '/templatePage',
     element: <TemplatePage />,
+  },
+  {
+    path: 'chatting',
+    element: <Chatting />,
   },
 ]);
 
