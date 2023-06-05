@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.1.9",
+    "@uiw/codemirror-theme-atomone": "^4.21.0",
+    "@uiw/react-codemirror": "^4.21.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "web-vitals": "^3.0.3"
