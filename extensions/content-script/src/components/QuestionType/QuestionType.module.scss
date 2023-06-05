@@ -6,7 +6,7 @@
   &__label {
     font-weight: 900;
     color: black;
-    position: absolute;
+    position: absolute !important;
     left: 0;
     top: -20px;
   }
@@ -14,11 +14,11 @@
     color: var(--gray-300);
   }
   &__toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     width: 100%;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
   }
 
   &__menu {

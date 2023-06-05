@@ -35,7 +35,16 @@ const TemplatePage = () => {
     codeExplain();
   }, []);
 
-  return <div>1</div>;
+  return (
+    <div>
+      <div className={style.TemplatePage}>
+        <SoftwareStackDropdown />
+        <QuestionType />
+        <CodeMirrorEditor code="1234" />
+        <SearchInput />
+      </div>
+    </div>
+  );
 };
 
 export default TemplatePage;
