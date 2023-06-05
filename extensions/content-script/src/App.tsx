@@ -1,14 +1,13 @@
 /// <reference types="chrome" />
 /// <reference types="vite-plugin-svgr/client" />
 
-import Logo from "./Logo";
-import "./App.css";
+import React from "react";
+import cn from 'classnames';
 
 function App() {
   return (
-    <div className="App">
+    <div className={cn("wrapper", "d-flex flex-column justify-content-center")}>
       <header className="App-header">
-        <Logo className="App-logo" id="App-logo" title="React logo" />
         <p>Hello, World!</p>
         <p>I'm a Chrome Extension Content Script!</p>
       </header>
