@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import style from './SoftwareStackDropdown.module.scss';
-
+import { AppContext } from '../../main';
 import {
   UncontrolledDropdown,
   DropdownToggle,
@@ -11,6 +11,7 @@ import {
 import { ChevronDownIcon, HelpCircleIcon } from '@goorm-dev/gds-icons';
 
 const SoftwareStackDropdown = () => {
+  const { setStack } = useContext(AppContext);
   const softwareStacks = [
     { id: 'cpp', enable: true, show: true },
     { id: 'hcj', enable: true, show: true },
@@ -54,6 +55,12 @@ const SoftwareStackDropdown = () => {
   ];
   const selectedSoftwareStack = softwareStacks[0];
 
+  const [selected, setSelected] = useState('cpp');
+  const handleClick = (id) => {
+    setSelected(id);
+    setStack(id);
+  };
+
   return (
     <div className={style.SoftwareStackDropdown}>
       <label className={style.SoftwareStackDropdown__label}>
@@ -70,7 +77,7 @@ const SoftwareStackDropdown = () => {
           color="select"
           block
         >
-          <div>{selectedSoftwareStack.id}</div>
+          <div>{selected}</div>
           <ChevronDownIcon />
         </DropdownToggle>
         <DropdownMenu className={style.SoftwareStackDropdown__menu}>
@@ -79,6 +86,7 @@ const SoftwareStackDropdown = () => {
               <DropdownItem
                 className={style.SoftwareStackDropdown__item}
                 key={softwareStack.id}
+                onClick={() => handleClick(softwareStack.id)}
               >
                 <div>{softwareStack.id}</div>
               </DropdownItem>

@@ -31,14 +31,40 @@ const root = createRoot(container!);
 export const AppContext = createContext({
   roomIndex: {},
   updateRoomIndex: (index: number) => {},
+  prompt: '',
+  setPrompt: (prompt: string) => {},
+  description: '',
+  setDescription: (description: string) => {},
+  stack: '',
+  setStack: (stack: string) => {},
+  type: '',
+  setType: (type: string) => {},
 });
 
 const AppProvider = ({ children }) => {
   const [roomIndex, setRoomIndex] = useState(0); // Set your initial state here
   const updateRoomIndex = (index: number) => setRoomIndex(index);
 
+  const [prompt, setPrompt] = useState('');
+  const [description, setDescription] = useState('');
+  const [stack, setStack] = useState('');
+  const [type, setType] = useState('');
+
   return (
-    <AppContext.Provider value={{ roomIndex, updateRoomIndex }}>
+    <AppContext.Provider
+      value={{
+        roomIndex,
+        updateRoomIndex,
+        prompt,
+        setPrompt,
+        description,
+        setDescription,
+        stack,
+        setStack,
+        type,
+        setType,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

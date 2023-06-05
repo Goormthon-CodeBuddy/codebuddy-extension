@@ -8,7 +8,7 @@ const SearchInput = () => {
     <div className={style.SearchInput}>
       <textarea
         type="text"
-        placeholder="Send를 눌러 전송"
+        placeholder="코드에 대한 설명이나 에러 메시지를 작성해 주세요"
         className={style.SearchInput__input}
       />
       <Button
