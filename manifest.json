@@ -18,5 +18,8 @@
       "js": ["extensions/content-script/src/main.tsx"],
       "all-frame": true
     }
-  ]
+  ],
+  "externally_connectable": {
+    "matches": ["*://*/"]
+  }
 }

@@ -9,13 +9,17 @@ import './App.css';
 import { Button } from 'react-bootstrap';
 
 function App() {
+  // const handleNotification = () => {
+  //   chrome.notifications.create({
+  //     type: 'basic',
+  //     title: 'Code Buddy',
+  //     message: 'You have an alert in 15 minutes',
+  //     iconUrl: 'favicon.ico',
+  //   });
+  // };
+
   const handleNotification = () => {
-    chrome.notifications.create({
-      type: 'basic',
-      title: 'Code Buddy',
-      message: 'You have an alert in 15 minutes',
-      iconUrl: 'favicon.ico',
-    });
+    chrome.runtime.sendMessage({ action: 'createNotification' });
   };
 
   return (
