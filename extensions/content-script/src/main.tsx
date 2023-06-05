@@ -9,7 +9,7 @@ import TemplatePage from './pages/TemplatePage/TemplatePage';
 const router = createMemoryRouter([
   {
     path: '/',
-    element: <TemplatePage />,
+    element: <Landing />,
   },
   {
     path: '/templatePage',
@@ -39,6 +39,10 @@ export const AppContext = createContext({
   setStack: (stack: string) => {},
   type: '',
   setType: (type: string) => {},
+  answer: '',
+  setAnswer: (answer: string) => {},
+  fixCode: '',
+  setFixCode: (fixCode: string) => {},
 });
 
 const AppProvider = ({ children }) => {
@@ -49,6 +53,8 @@ const AppProvider = ({ children }) => {
   const [description, setDescription] = useState('');
   const [stack, setStack] = useState('cpp');
   const [type, setType] = useState('에러 해결');
+  const [answer, setAnswer] = useState('');
+  const [fixCode, setFixCode] = useState('');
 
   return (
     <AppContext.Provider
@@ -63,6 +69,10 @@ const AppProvider = ({ children }) => {
         setStack,
         type,
         setType,
+        answer,
+        setAnswer,
+        fixCode,
+        setFixCode,
       }}
     >
       {children}

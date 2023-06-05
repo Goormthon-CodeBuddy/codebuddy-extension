@@ -5,8 +5,16 @@ import style from './SearchInput.module.scss';
 import { AppContext } from '../../main';
 
 const SearchInput = () => {
-  const { setDescription, roomIndex, description, type, stack, prompt } =
-    useContext(AppContext);
+  const {
+    setDescription,
+    roomIndex,
+    description,
+    type,
+    stack,
+    prompt,
+    setAnswer,
+    setFixCode,
+  } = useContext(AppContext);
   const [input, setInput] = useState('');
 
   const handleNotification = () => {
@@ -36,6 +44,7 @@ const SearchInput = () => {
       }
 
       const data = await response.json();
+      setAnswer(data);
       console.log(data);
       handleNotification();
     } catch (error) {
@@ -66,6 +75,8 @@ const SearchInput = () => {
       }
 
       const data = await response.json();
+      setAnswer(data.details);
+      setFixCode(data.fixedCode);
       console.log(data);
       handleNotification();
     } catch (error) {
@@ -96,6 +107,8 @@ const SearchInput = () => {
       }
 
       const data = await response.json();
+      setAnswer(data.details);
+      setFixCode(data.fixedCode);
       console.log(data);
       handleNotification();
     } catch (error) {
