@@ -17,8 +17,8 @@ const TemplatePage = () => {
         <SoftwareStackDropdown />
         <QuestionType />
         <CodeMirrorEditor code="1234" />
-        <SearchInput />
       </div>
+      <SearchInput />
     </div>
   );
 };
