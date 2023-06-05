@@ -5,7 +5,8 @@ import './popup.scss';
 const App = () => {
   return (
     <div>
-      <img src="icon.png" />
+      <h5>CodeBuddy Chrome Extension</h5>
+      <p>테스트 창</p>
     </div>
   )
 }
