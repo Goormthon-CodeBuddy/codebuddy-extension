@@ -7,8 +7,9 @@ import './App.css';
 import './goormstrap.css';
 
 import Header from './components/Header';
-import StartTemplateButton from './components/StartTemplateButton';
-import SearchInput from './components/SearchInput';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import MainPage from './components/MainPage/MainPage';
+import TemplatePage from './components/TemplatePage';
 
 function App() {
   // const handleNotification = () => {
@@ -25,12 +26,14 @@ function App() {
   };
 
   return (
-    <div className='wrapper'>
+    <div className="App">
       <Header />
-      <div className="startTemplateButtonContainer">
-        <StartTemplateButton />
-      </div>
-      <SearchInput />
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/templatePage" element={<TemplatePage />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
