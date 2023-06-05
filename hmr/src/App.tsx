@@ -4,20 +4,17 @@ import React from 'react';
 import Logo from './Logo';
 import './App.css';
 import Header from './components/Header';
-
+import StartTemplateButton from './components/StartTemplateButton';
+import './goormstrap.css';
+import SearchInput from './components/SearchInput';
 function App() {
-  const handleNotification = () => {
-    chrome.notifications.create({
-      type: 'basic',
-      title: 'Code Buddy',
-      message: 'You have an alert in 15 minutes',
-      iconUrl: 'favicon.ico',
-    });
-  };
-
   return (
     <div className="App">
       <Header />
+      <div className="startTemplateButtonContainer">
+        <StartTemplateButton />
+      </div>
+      <SearchInput />
     </div>
   );
 }
