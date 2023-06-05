@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
   },
-  "include": ["global.d.ts", "extensions/**/*.ts"],
+  "include": ["global.d.ts", "extensions/**/*.ts", "extensions/background/background.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

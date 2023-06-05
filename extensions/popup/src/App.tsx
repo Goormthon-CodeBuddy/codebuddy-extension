@@ -1,9 +1,9 @@
 /// <reference types="chrome" />
 /// <reference types="vite-plugin-svgr/client" />
 
-import React from "react";
-import Logo from "./Logo";
-import "./App.css";
+import React from 'react';
+import Logo from './Logo';
+import './App.css';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <Logo className="App-logo" id="App-logo" title="React logo" />
         <p>Hello, World!</p>
-        <p>I'm a Chrome Extension Content Script!</p>
+        <p>I'm a Chrome Extension</p>
       </header>
     </div>
   );
