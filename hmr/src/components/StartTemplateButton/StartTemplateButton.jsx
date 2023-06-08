@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { AiGoormeeIcon, ForwardPageIcon } from '@goorm-dev/gds-icons';
 import { Button } from '@goorm-dev/gds-components';
 import style from './StartTemplateButton.module.scss';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../../App';
+import joinRoom from '../../../../apis/requestNewRoom';
 
 const StartTemplateButton = () => {
   return (
@@ -25,6 +28,7 @@ const StartTemplateButton = () => {
           color="primary"
           size="xl"
           className={style.StartTemplateButton__button}
+          onClick={joinRoom}
         >
           템플릿으로 질문하기
         </Button>

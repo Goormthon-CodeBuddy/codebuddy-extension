@@ -1,7 +1,8 @@
 /// <reference types="chrome" />
 /// <reference types="vite-plugin-svgr/client" />
 
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../main';
 
 import './Landing.css';
 import '../../goormstrap.css';
@@ -20,12 +21,11 @@ function Landing() {
   //   });
   // };
 
-  const handleNotification = () => {
-    chrome.runtime.sendMessage({ action: 'createNotification' });
-  };
+  const { roomIndex } = useContext(AppContext);
+  console.log(roomIndex);
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <Header />
       <div className="startTemplateButtonContainer">
         <StartTemplateButton />

@@ -25,8 +25,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     chrome.notifications.create({
       type: 'basic',
       title: 'Code Buddy',
-      message: 'You have an alert in 15 minutes',
-      iconUrl: 'favicon.ico',
+      message: 'ChatGPT 답변이 완료되었습니다.',
+      iconUrl: 'goorm.png',
     });
   }
 });

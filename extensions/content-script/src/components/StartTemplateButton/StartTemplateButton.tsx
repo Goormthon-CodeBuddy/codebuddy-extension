@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { AiGoormeeIcon, ForwardPageIcon } from '@goorm-dev/gds-icons';
 import { Button } from '@goorm-dev/gds-components';
+
+import joinRoom from '../../../../../apis/requestNewRoom';
+import { AppContext } from '../../main';
+
 import style from './StartTemplateButton.module.scss';
 
 const StartTemplateButton = () => {
+  const { updateRoomIndex } = useContext(AppContext);
+
+  const url = 'http://localhost:8080/api/newRoom';
+  const createRoom = async () => {
+    const uid = window.location.pathname.replace('/workspace/', '');
+    const newRoomIndex = await joinRoom(uid);
+    if (newRoomIndex) {
+      updateRoomIndex(newRoomIndex);
+      navigate('/templatePage');
+    }
+  };
+
+  const navigate = useNavigate();
+
   return (
     <div className={style.StartTemplateButton}>
       <header className={style.StartTemplateButton__header}>
@@ -24,6 +43,7 @@ const StartTemplateButton = () => {
           color="primary"
           size="xl"
           className={style.StartTemplateButton__button}
+          onClick={createRoom}
         >
           템플릿으로 질문하기
         </Button>
